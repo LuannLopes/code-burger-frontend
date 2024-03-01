@@ -7,6 +7,7 @@ import * as Yup from 'yup'
 import LoginImg from '../../assets/login-img.svg'
 import Logo from '../../assets/logo.svg'
 import Button from '../../components/Button'
+import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
   Container,
@@ -19,6 +20,8 @@ import {
 } from './style'
 
 function Login() {
+  const { putUserData } = useUser()
+
   const schema = Yup.object().shape({
     email: Yup.string()
       .email('Digite um e-mail válido')
@@ -38,7 +41,7 @@ function Login() {
 
   const onSubmit = async clientData => {
     try {
-      const { status } = await api.post(
+      const { data, status } = await api.post(
         'sessions',
         {
           email: clientData.email,
@@ -55,6 +58,8 @@ function Login() {
       } else {
         throw new Error()
       }
+
+      putUserData(data)
     } catch (error) {
       toast.error('Falha no sistema! Tente novamente')
     }
