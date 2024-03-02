@@ -9,12 +9,12 @@ export const UserProvider = ({ children }) => {
   const putUserData = async userInfo => {
     setUserData(userInfo)
 
-    await localStorage.setItem('codeburger:userData', JSON.stringify(userInfo))
+    await localStorage.setItem('lopesburger:userData', JSON.stringify(userInfo))
   }
 
   useEffect(() => {
     const loadUserData = async () => {
-      const clientInfo = await localStorage.getItem('codeburger:userData')
+      const clientInfo = await localStorage.getItem('lopesburger:userData')
 
       if (clientInfo) {
         setUserData(JSON.parse(clientInfo))

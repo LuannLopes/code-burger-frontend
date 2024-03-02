@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
@@ -21,6 +22,7 @@ import {
 
 function Login() {
   const { putUserData } = useUser()
+  const navigate = useNavigate()
 
   const schema = Yup.object().shape({
     email: Yup.string()
@@ -95,7 +97,8 @@ function Login() {
         </form>
 
         <SignInLink>
-          Não possui conta? <a>Cadastre aqui</a>
+          Não possui conta?{' '}
+          <a onClick={() => navigate('/register')}>Cadastre aqui</a>
         </SignInLink>
       </ContainerItens>
     </Container>

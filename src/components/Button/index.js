@@ -1,4 +1,4 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import React from 'react'
 
 import { ContainerButton } from './styles'
@@ -10,5 +10,5 @@ function Button({ children, ...rest }) {
 export default Button
 
 Button.propTypes = {
-  children: propTypes.string
+  children: PropTypes.string
 }
