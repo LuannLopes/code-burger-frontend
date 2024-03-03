@@ -55,6 +55,10 @@ function Login() {
       )
       if (status === 201 || status === 200) {
         toast.success('Seja bem-vindo(a)')
+
+        setTimeout(() => {
+          navigate('/')
+        }, 1000)
       } else if (status === 401) {
         toast.error('Verifique seu e-mail e senha')
       } else {
