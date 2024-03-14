@@ -57,7 +57,11 @@ export function Login() {
         toast.success('Seja bem-vindo(a)')
 
         setTimeout(() => {
-          navigate('/')
+          if (data.admin) {
+            navigate('/orders')
+          } else {
+            navigate('/')
+          }
         }, 1000)
       } else if (status === 401) {
         toast.error('Verifique seu e-mail e senha')

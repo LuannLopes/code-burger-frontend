@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import { Header } from '../components'
-import { Home, Login, Products, Register, Cart } from '../containers'
+import { Home, Login, Products, Register, Cart, Admin } from '../containers'
 import PrivateRoute from './private-route'
 
 function MyRoutes() {
@@ -35,6 +35,14 @@ function MyRoutes() {
             <PrivateRoute>
               <Header />
               <Cart />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/orders"
+          element={
+            <PrivateRoute adminRequired>
+              <Admin />
             </PrivateRoute>
           }
         />
