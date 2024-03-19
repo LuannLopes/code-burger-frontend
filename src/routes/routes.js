@@ -46,6 +46,14 @@ function MyRoutes() {
             </PrivateRoute>
           }
         />
+        <Route
+          path="/list-products"
+          element={
+            <PrivateRoute adminRequired>
+              <Admin />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </Router>
   )
