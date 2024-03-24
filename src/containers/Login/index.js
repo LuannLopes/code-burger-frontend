@@ -7,7 +7,7 @@ import * as Yup from 'yup'
 
 import LoginImg from '../../assets/login-img.svg'
 import Logo from '../../assets/logo.svg'
-import { Button } from '../../components'
+import { Button, ErrorMessage } from '../../components'
 import { useUser } from '../../hooks/UserContext'
 import api from '../../services/api'
 import {
@@ -16,8 +16,7 @@ import {
   ContainerItens,
   Label,
   Input,
-  SignInLink,
-  ErrorMessage
+  SignInLink
 } from './style'
 
 export function Login() {
@@ -58,7 +57,7 @@ export function Login() {
 
         setTimeout(() => {
           if (data.admin) {
-            navigate('/orders')
+            navigate('/pedidos')
           } else {
             navigate('/')
           }
