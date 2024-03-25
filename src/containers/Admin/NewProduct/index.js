@@ -2,7 +2,9 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import CloudUploadIcon from '@mui/icons-material/CloudUpload'
 import React, { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import ReactSelect from 'react-select'
+import { toast } from 'react-toastify'
 import * as Yup from 'yup'
 
 import { ErrorMessage } from '../../../components'
@@ -12,6 +14,7 @@ import { ButtonStyles, Container, Input, Label, LabelUpload } from './styles'
 function NewProduct() {
   const [fileName, setFileName] = useState(null)
   const [categories, setCategories] = useState([])
+  const navigate = useNavigate()
 
   const schema = Yup.object().shape({
     name: Yup.string().required('Nome obrigatório'),
@@ -37,7 +40,25 @@ function NewProduct() {
   } = useForm({
     resolver: yupResolver(schema)
   })
-  const onSubmit = data => console.log(data)
+
+  const onSubmit = async data => {
+    const productDataFormData = new FormData()
+
+    productDataFormData.append('name', data.name)
+    productDataFormData.append('price', data.price)
+    productDataFormData.append('category_id', data.category.id)
+    productDataFormData.append('file', data.file[0])
+
+    await toast.promise(api.post('products', productDataFormData), {
+      loading: 'Enviando produto',
+      success: 'Produto enviado com sucesso',
+      error: 'Ocorreu um erro ao enviar o produto'
+    })
+
+    setTimeout(() => {
+      navigate('/listar-produtos')
+    }, 2000)
+  }
 
   useEffect(() => {
     async function loadCategories() {
@@ -85,7 +106,7 @@ function NewProduct() {
 
         <div>
           <Controller
-            name="categoryd"
+            name="category"
             control={control}
             render={({ field }) => {
               return (
