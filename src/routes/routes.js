@@ -22,7 +22,7 @@ function MyRoutes() {
           }
         />
         <Route
-          path="/products"
+          path="/products/:categoryId"
           element={
             <PrivateRoute>
               <Header />

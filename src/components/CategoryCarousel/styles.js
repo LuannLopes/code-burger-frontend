@@ -13,6 +13,7 @@ export const Container = styled.div`
     background-color: #9758a6;
     color: #efefef;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: none;
   }
 
   .rec.rec-arrow:hover {

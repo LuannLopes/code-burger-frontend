@@ -34,7 +34,7 @@ export function Header() {
           Home
         </PageLink>
         <PageLink
-          onClick={() => navigate('/products')}
+          onClick={() => navigate('/products/0')}
           isActive={location.pathname.includes('/products')}
         >
           Ver Produtos

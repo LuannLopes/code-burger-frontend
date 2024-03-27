@@ -31,15 +31,15 @@ export function CategoryCarousel() {
       <CategoryImg src={Category} alt="logo da categoria" />
 
       <Carousel
-        itemsToShow={4}
-        style={{ with: '90%' }}
+        itemsToShow={5}
+        style={{ with: '90%', padding: '0 14px' }}
         breakPoints={breakPoints}
       >
         {categories &&
           categories.map(category => (
             <ContainerItems key={category.id}>
               <Image src={category.url} alt="Foto da categoria" />
-              <Button>{category.name}</Button>
+              <Button to={`/products/${category.id}`}>{category.name}</Button>
             </ContainerItems>
           ))}
       </Carousel>

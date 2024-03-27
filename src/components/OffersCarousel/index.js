@@ -43,7 +43,7 @@ export function OffersCarousel() {
 
       <Carousel
         itemsToShow={4}
-        style={{ with: '90%' }}
+        style={{ with: '90%', padding: '0 14px' }}
         breakPoints={breakPoints}
       >
         {offers.map(product => (

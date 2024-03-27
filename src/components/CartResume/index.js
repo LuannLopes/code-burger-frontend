@@ -41,9 +41,9 @@ export function CartResume() {
       <Container>
         <div className="container-top">
           <h2 className="title">Resumo do pedido</h2>
-          <p className="items">Resumo do pedido</p>
+          <p className="items">Items</p>
           <p className="items-price">{formatCurrency(finalPrice)}</p>
-          <p className="delivery-tax">Resumo do pedido</p>
+          <p className="delivery-tax">Taxa de entrega</p>
           <p className="delivery-tax-price">{formatCurrency(deliveryTax)}</p>
         </div>
         <div className="container-bottom">
