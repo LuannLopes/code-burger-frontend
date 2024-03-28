@@ -56,6 +56,7 @@ export function Register() {
       )
       if (status === 201 || status === 200) {
         toast.success('Cadastro criado com sucesso')
+        navigate('/')
       } else if (status === 409) {
         toast.error('E-mail já cadastrado! Faça login para continuar.')
       } else {
