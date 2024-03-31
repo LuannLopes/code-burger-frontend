@@ -71,7 +71,7 @@ export function Register() {
     <Container>
       <RegisterImage src={RegisterImg} alt="register-image" />
       <ContainerItens>
-        <img src={Logo} alt="logo-lopes-burger" />
+        <img src={Logo} alt="logo-code-burger" />
         <h1>Cadastre-se</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>

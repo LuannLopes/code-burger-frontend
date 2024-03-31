@@ -78,7 +78,7 @@ export function Login() {
     <Container>
       <LoginImage src={LoginImg} alt="login-image" />
       <ContainerItens>
-        <img src={Logo} alt="logo-lopes-burger" />
+        <img src={Logo} alt="logo-code-burger" />
         <h1>Login</h1>
 
         <form noValidate onSubmit={handleSubmit(onSubmit)}>

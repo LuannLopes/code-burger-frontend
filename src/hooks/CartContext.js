@@ -7,7 +7,7 @@ export const CartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([])
 
   const upDateLocalStorage = async products => {
-    await localStorage.setItem('lopesburger:cartInfo', JSON.stringify(products))
+    await localStorage.setItem('codeburger:cartInfo', JSON.stringify(products))
   }
 
   const putProductInCart = async product => {
@@ -70,7 +70,7 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const loadUserData = async () => {
-      const clientCartData = await localStorage.getItem('lopesburger:cartInfo')
+      const clientCartData = await localStorage.getItem('codeburger:cartInfo')
 
       if (clientCartData) {
         setCartProducts(JSON.parse(clientCartData))
