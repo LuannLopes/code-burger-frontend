@@ -19,10 +19,10 @@ export const CategoriesMenu = styled.div`
 export const CategoryButton = styled.button`
   font-size: 17px;
   line-height: 20px;
-  color: ${props => (props.isActiveCategory ? '#9758a6' : '#9a9a9d')};
+  color: ${props => (props.$isActiveCategory ? '#9758a6' : '#9a9a9d')};
   background: none;
   border: none;
-  border-bottom: ${props => props.isActiveCategory && '2px solid #9758a6'};
+  border-bottom: ${props => props.$isActiveCategory && '2px solid #9758a6'};
   padding-bottom: 4px;
   cursor: pointer;
 `

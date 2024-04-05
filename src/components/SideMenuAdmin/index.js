@@ -12,7 +12,7 @@ export function SideMenuAdmin({ path }) {
     <Container>
       <hr></hr>
       {listLinks.map(item => (
-        <ItemContainer key={item.id} isActive={path === item.link}>
+        <ItemContainer key={item.id} $isActive={path === item.link}>
           <item.icon className="icon" />
           <ListLink to={item.link}>{item.label}</ListLink>
         </ItemContainer>

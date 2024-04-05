@@ -29,13 +29,13 @@ export function Header() {
       <ContainerLeft>
         <PageLink
           onClick={() => navigate('/')}
-          isActive={location.pathname === '/'}
+          $isActive={location.pathname === '/'}
         >
           Home
         </PageLink>
         <PageLink
           onClick={() => navigate('/products/0')}
-          isActive={location.pathname.includes('/products')}
+          $isActive={location.pathname.includes('/products')}
         >
           Ver Produtos
         </PageLink>

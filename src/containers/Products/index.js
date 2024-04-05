@@ -66,7 +66,7 @@ export function Products() {
             <CategoryButton
               type="button"
               key={category.id}
-              isActiveCategory={activeCategory === category.id}
+              $isActiveCategory={activeCategory === category.id}
               onClick={() => {
                 setActiveCategory(category.id)
               }}
